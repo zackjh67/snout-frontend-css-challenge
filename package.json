@@ -1,0 +1,24 @@
+{
+  "name": "snout-frontend-css-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zackjh67/snout-frontend-css-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackjh67/snout-frontend-css-challenge/issues"
+  },
+  "homepage": "https://github.com/zackjh67/snout-frontend-css-challenge#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.35.2"
+  }
+}

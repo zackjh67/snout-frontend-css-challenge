@@ -1,0 +1,29 @@
+@import 'var.scss';
+
+body {
+  margin: 0;
+  font-size: $global-font-size;
+  font-family: $global-font-family;
+
+  button {
+    border: none;
+  }
+}
+
+#main-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.btn {
+  background-color: $btn-purple;
+  color: $btn-font-color;
+  border-radius: 0.2rem;
+  padding: 0.9rem;
+}
+
+#centered-button {
+  margin: auto;
+}
