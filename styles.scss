@@ -7,6 +7,7 @@ body {
 
   button {
     border: none;
+    display: block;
   }
 }
 
@@ -18,12 +19,49 @@ body {
 }
 
 .btn {
-  background-color: $btn-purple;
   color: $btn-font-color;
-  border-radius: 0.2rem;
-  padding: 0.9rem;
+  border-radius: $btn-border-radius;
+  padding: $btn-padding;
 }
 
-#centered-button {
+.btn:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+.btn:active {
+  filter: brightness(90%);
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+}
+
+.btn-purple {
+  background-color: $btn-purple;
+}
+
+.btn-red {
+  background-color: $btn-red;
+}
+
+.btn-blue {
+  background-color: $btn-blue;
+}
+
+.btn-orange {
+  background-color: $btn-orange;
+}
+
+.btn-group {
+  display: flex;
+  .btn {
+    margin: $btn-group-btn-margin;
+  }
+  flex-wrap: wrap;
+}
+
+#centered-button-group {
   margin: auto;
+  // about wide enough to force the flex-wrap after a second button with current 'Open Modal' text in it
+  width: 15rem;
+  justify-content: center;
 }
