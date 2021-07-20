@@ -8,57 +8,15 @@
 <body>
 
 <div id="main-container">
-  <div class="btn-group" id="centered-button-group">
-    <button class="btn btn-purple">Open Modal</button>
-    <button class="btn btn-red">Open Modal</button>
-    <button class="btn btn-blue">Open Modal</button>
-    <button class="btn btn-orange">Open Modal</button>
+  <div id="centered-button-group">
+    <div id="quad-button-group" class="btn-group">
+      <button class="btn btn-purple">Open Modal</button>
+      <button class="btn btn-red">Open Modal</button>
+      <button class="btn btn-blue">Open Modal</button>
+      <button class="btn btn-orange">Open Modal</button>
+    </div>
+    <button class="btn big-btn">Big Button</button>
   </div>
 </div>
-<script type="text/javascript">
-  // thanks Tim Down https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
-  const componentToHex = (c) => {
-    const hex = parseInt(c).toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-  };
-
-  const rgbToHex = (r, g, b) => {
-    return "#" + (componentToHex(r) + componentToHex(g) + componentToHex(b)).toUpperCase();
-  };
-
-  const openModal = (btn) => {
-    const btnColorStr =  window.getComputedStyle( btn , null).getPropertyValue( 'background-color' );
-    // convert rgb string to usable values to make hex
-    const [ r, g, b] = btnColorStr.slice(4, -1).split(', ');
-    const buttonColor = rgbToHex(r,g,b);
-
-    const modalContainer = document.createElement('div');
-    const modalBackground = document.createElement('div');
-    const modal = document.createElement('div');
-    const modalHex = document.createElement('span');
-
-    modalContainer.setAttribute('class', 'modal-container');
-    modalBackground.setAttribute('class', 'modal-background');
-    modal.setAttribute('class', 'modal');
-    modal.innerText = 'You clicked a button!';
-    modal.appendChild(modalHex);
-    modalHex.innerText = buttonColor;
-    modalHex.style.setProperty('color', buttonColor);
-    const dismiss = () => {
-      document.body.removeChild(modalContainer);
-    };
-
-    modalBackground.addEventListener('click', dismiss);
-
-    document.body.appendChild(modalContainer);
-    modalContainer.appendChild(modalBackground);
-    modalContainer.appendChild(modal);
-  };
-
-  const buttons = Array.from(document.getElementById('centered-button-group').getElementsByClassName('btn'));
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', openModal.bind(this, btn));
-  })
-</script>
 </body>
 </html>
